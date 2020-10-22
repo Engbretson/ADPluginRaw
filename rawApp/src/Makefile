@@ -1,29 +1,16 @@
 TOP=../..
 
 include $(TOP)/configure/CONFIG
-#----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-#=============================
-# Build the IOC support library
+DBD += NDPluginRaw.dbd
 
-#LIBRARY_IOC = NDFileRaw
+INC += NDFileRaw.h
+
 LIBRARY_IOC = NDPluginRAW
 
-# aliveRecord.h will be created from aliveRecord.dbd
-##DBDINC += NDPluginRaw
-# Install aliveSupport.dbd into <top>/dbd
-DBD += NDPluginRAW.dbd
-
-# Compile and add the code to the support library
-LIB_SRCS  += NDFileRaw.cpp
-
-#LIBS += $(EPICS_BASE_IOC_LIBS)
+NDPluginRAW_SRCS  += NDFileRaw.cpp
 
 include $(ADCORE)/ADApp/commonLibraryMakefile
-
-#=============================
-
 
 include $(TOP)/configure/RULES
 #----------------------------------------
