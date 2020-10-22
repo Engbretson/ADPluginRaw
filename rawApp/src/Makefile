@@ -2,7 +2,7 @@ TOP=../..
 
 include $(TOP)/configure/CONFIG
 
-DBD += NDPluginRaw.dbd
+DBD += NDPluginRAW.dbd
 
 INC += NDFileRaw.h
 
