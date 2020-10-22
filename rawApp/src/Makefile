@@ -13,7 +13,7 @@ LIBRARY_IOC += NDPluginRAW
 # aliveRecord.h will be created from aliveRecord.dbd
 ##DBDINC += NDPluginRaw
 # Install aliveSupport.dbd into <top>/dbd
-DBD += NDFileRaw.dbd
+DBD += NDPluginRaw.dbd
 
 # Compile and add the code to the support library
 SRCS += NDFileRaw.cpp
