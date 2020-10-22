@@ -7,7 +7,8 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC support library
 
-LIBRARY_IOC += NDFileRaw
+#LIBRARY_IOC += NDFileRaw
+LIBRARY_IOC += NDPluginRAW
 
 # aliveRecord.h will be created from aliveRecord.dbd
 ##DBDINC += NDPluginRaw
