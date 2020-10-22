@@ -1,19 +1,34 @@
 "# NDRawFile_Plugin" 
 
-Tentativel AD R3-7 compatible
+Tentative AD R3-10 compatible
 
 Used latest Mark Rivers NDFileNull for the current AD template, cut and paste code from legacy Keenan Lang NFFileRaw code
 
 You make modify the ADDetector main make file to be aware of the existing of the plugin.
 
+Add a reference to the plugin in your RELEAE file(s)
+
+ADPLUGINRAW=$(AREA_DETECTOR)/ADPluginRaw then . . .
+
+
+Example: using SimDtector, edit the Makefile in
+
+\ADSimDetector-R2-10\simDetectorApp\src
+
+add
 
 ifdef ADPLUGINRAW
-DIRS := $(DIRS) $(ADPLUGINRAW)
-$(ADPLUGINRAW)_DEPEND_DIRS += $(ADCORE)
+  $(DBD_NAME)_DBD  += NDPluginRAW.dbd
+  PROD_LIBS         += NDPluginRAW
 endif
+
 
 and either in ADCore commonDriverMakefile or in the specific area detector you intend of building you need to 
 add code similar to
+
+Example: using SimDetector, edit the makefile in
+
+\ADSimDetector-R2-10\iocs\simDetectorIOC\simDetectorApp\src
 
 ifdef ADPLUGINRAW
   $(DBD_NAME)_DBD  += NDPluginRAW.dbd

@@ -7,18 +7,20 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC support library
 
-#LIBRARY_IOC += NDFileRaw
-LIBRARY_IOC += NDPluginRAW
+#LIBRARY_IOC = NDFileRaw
+LIBRARY_IOC = NDPluginRAW
 
 # aliveRecord.h will be created from aliveRecord.dbd
 ##DBDINC += NDPluginRaw
 # Install aliveSupport.dbd into <top>/dbd
-DBD += NDPluginRaw.dbd
+DBD += NDPluginRAW.dbd
 
 # Compile and add the code to the support library
-SRCS += NDFileRaw.cpp
+LIB_SRCS  += NDFileRaw.cpp
 
-LIBS += $(EPICS_BASE_IOC_LIBS)
+#LIBS += $(EPICS_BASE_IOC_LIBS)
+
+include $(ADCORE)/ADApp/commonLibraryMakefile
 
 #=============================
 
